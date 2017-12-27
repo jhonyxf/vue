@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="app-6">
+    <p>{{mensagem}}</p>
+    <p><input v-on:focus="limpar" v-model="mensagem"></p>
+    <button v-on:click="limpar">Limpar</button>
+    </div>
+</body>
+<script>
+  var app6 = new Vue({
+    el:'#app-6',
+    data:{
+      mensagem:'Hello Vue'
+    },
+    methods: {
+      limpar:function(){
+        this.mensagem = ""
+      }
+    }
+  })
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="todo in todos">
+        {{todo.id}} - {{todo.texto}}
+      </li>
+    </ul>
+  </div>
+    <div id="app-5">
+      <p>{{mensagem}}</p>
+      <button v-on:click="mensagemReversa">Inverter mensagem</button>
+    </div>
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data:{
+      todos:[
+        {id:1,texto:'fasdfaf'},
+        {id:2,texto:'Jhony'},
+        {id:3,texto:'teste'}
+      ]
+    }
+  })
+
+  var app5 = new Vue({
+    el:'#app-5',
+    data:{
+      mensagem: 'Hello my friend'
+    },
+    methods:{
+      mensagemReversa:function(){
+        this.mensagem = this.mensagem.split('').reverse().join('')
+      }
+    }
+  })
+</script>
+</html>
